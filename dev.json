@@ -1,0 +1,6 @@
+{
+    "env": "dev",
+    "app_name": "url-shortner",
+    "port": "3007"
+  }
+  

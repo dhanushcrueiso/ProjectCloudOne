@@ -10,6 +10,7 @@ import (
 func SetupRoutes(app *fiber.App) {
 
 	app.Post("/v1/shorten", GetShortenUrl)
+	app.Post("/v1/getOriginal", Redirect)
 
 }
 
@@ -39,4 +40,18 @@ func GetShortenUrl(c *fiber.Ctx) error {
 		URL: URLMap[originalURL],
 	}
 	return c.JSON(res)
+}
+
+func Redirect(c *fiber.Ctx) error {
+
+	req := RequestData{}
+	if err := c.BodyParser(&req); err != nil {
+		return c.Status(http.StatusBadRequest).SendString("Invalid request body")
+	}
+	fmt.Println("check 1")
+
+	res := getKeyByValue(URLMap, req.URL)
+
+	return c.JSON(res)
+
 }

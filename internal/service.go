@@ -19,3 +19,12 @@ func generateShortURL() string {
 	}
 	return shortURL
 }
+
+func getKeyByValue(m map[string]string, value string) string {
+	for k, v := range m {
+		if v == value {
+			return k
+		}
+	}
+	return "" // Return an empty string if the value is not found
+}

@@ -30,8 +30,6 @@ func main() {
 
 	internal.SetupRoutes(app)
 
-	// r := internal.GetRouter()
-	// constants.Logger.Info("Listening to Port: " + cnf.Port)
-	// r.Run(":" + cnf.Port)
-	app.Listen(cnf.Port)
+	app.Listen(":" + cnf.Port)
+
 }

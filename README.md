@@ -14,3 +14,8 @@ Posting the shortned version to get the original url:
       Req body:{
               "url": "http://shortn.ly/CXZHiCf"
               }
+
+
+# Test 
+1. To test the application with pre written unit test case , navigate to the test folder and
+2. use : go test ; to run the test case automatically 
